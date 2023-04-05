@@ -1,11 +1,13 @@
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+#[derive(Debug)]
+  struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
 fn main() {
-  #[derive(Debug)]
-    struct User {
-      active: bool,
-      username: String,
-      email: String,
-      sign_in_count: u64,
-  }
 
   let mut user1 = User {
     active: true,
@@ -35,4 +37,8 @@ fn main() {
   println!("{:?}", &user2);
   println!("{:?}", &user3);
   // println!("{:?}", user1);
+
+
+  let black = Color(0, 0, 0);
+  let origin = Point(0, 0, 0);
 }
