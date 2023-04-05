@@ -4,7 +4,7 @@ fn main() {
     let mut count: u32 = 0;
 
     // outer loop
-    for outer_element in arr1 {
+    'outer: for outer_element in arr1 {
         println!("Loop count: {}", outer_element);
         
         // inner loop
@@ -15,7 +15,7 @@ fn main() {
                 }
                 
                 else if count >= 15 {
-                    break;
+                    break 'outer;
                 }
             }   
     }
