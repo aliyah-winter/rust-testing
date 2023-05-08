@@ -1,15 +1,21 @@
 fn main() {
 
-println!("{}", pigify(String::from("hello")));
-println!("{}", pigify(String::from("epple")));
+  println!("{}", pigify(&mut String::from("hello")));
+  println!("{}", pigify(&mut String::from("apple")));
+
 }
 
-fn pigify(s: String) -> String {
-  match &s[0..0] {
-    "a" | "e" | "i" | "o" | "u" => format!("{s}ay"),
-    _ => {let rest = &s[1..];
-      let first = &s[0..0];
-      format!("{rest}{first}ay")}
+fn pigify(s: &mut String) -> String {
+  let first = s.remove(0);
+  match first {
+    'a' | 'e' | 'i' | 'o' | 'u' => format!("{}{}ay", first, &s[0..]),
+    _ => format!("{}{}ay", &s[0..], first)
   }
-  
 }
+
+// fn is_vowel(c: char) -> bool {
+//   match c {
+//     'a' | 'e' | 'i' | 'o' | 'u' => true,
+//     _ => false
+//   }
+// }
