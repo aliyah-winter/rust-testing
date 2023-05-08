@@ -2,7 +2,6 @@ use std::io;
 
 fn main() {
 
-
   println!("Please input any word to convert to pig latin!");
 
   let mut word = String::new();
@@ -20,7 +19,7 @@ fn main() {
 fn pigify(s: &mut String) -> String {
   let first = s.remove(0);
   match first {
-    'a' | 'e' | 'i' | 'o' | 'u' => format!("{}{}ay", first, &s[0..]),
+    'a' | 'e' | 'i' | 'o' | 'u' => format!("{}{}hay", first, &s[0..]),
     _ => format!("{}{}ay", &s[0..], first)
   }
 }
