@@ -1,7 +1,19 @@
+use std::io;
+
 fn main() {
 
-  println!("{}", pigify(&mut String::from("hello")));
-  println!("{}", pigify(&mut String::from("apple")));
+
+  println!("Please input any word to convert to pig latin!");
+
+  let mut word = String::new();
+
+  io::stdin()
+      .read_line(&mut word)
+      .expect("Failed to read the word.");
+
+  let mut word: String = word.trim().to_lowercase();
+
+  println!("{}", pigify(&mut word));
 
 }
 
