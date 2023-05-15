@@ -12,7 +12,7 @@ fn main() {
 
   let mut word: String = word.trim().to_lowercase();
 
-  println!("{}", pigify(&mut word));
+  println!("{}!", pigify(&mut word));
 
 }
 
@@ -23,10 +23,3 @@ fn pigify(s: &mut String) -> String {
     _ => format!("{}{}ay", &s[0..], first)
   }
 }
-
-// fn is_vowel(c: char) -> bool {
-//   match c {
-//     'a' | 'e' | 'i' | 'o' | 'u' => true,
-//     _ => false
-//   }
-// }
